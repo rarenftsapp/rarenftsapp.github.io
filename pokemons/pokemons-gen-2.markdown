@@ -1,11 +1,14 @@
 ---
 layout: page
-title: Pokemons
-permalink: /pokemons/
+title: Pokemons - Generation 2
+permalink: /pokemons-gen-2/
+parent: Pokemons
 ---
 
 ## Pokemon collection
 
+
+### Generation 2
 
 <table>
 <colgroup>
@@ -16,17 +19,18 @@ permalink: /pokemons/
 <thead>
 <tr class="header">
 <th>Pokemon</th>
-<th>Generation</th>
 <th>ENS link</th>
 </tr>
 </thead>
 <tbody>
 {% for pokemon in site.data.pokemons %} 
+{% if pokemon.generation == 2 %}
 <tr>
 <td markdown="span">{{ pokemon.name }}</td>
-<td markdown="span">{{ pokemon.generation }}</td>
 <td markdown="span"><a href="https://ens.vision/name/{{ pokemon.name }}"> Link </a></td>
 </tr>
+{% endif %}
 {% endfor %}
 </tbody>
 </table>
+
